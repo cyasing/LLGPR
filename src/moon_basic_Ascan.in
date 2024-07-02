@@ -1,0 +1,19 @@
+#title: 3D A-scan from a metal cylinder buried in a dielectric half-space
+
+Taking Source of 50 MHz with cylinder at depth of 10 m, radius of 1 m.
+#domain: 50 50 0.15
+#dx_dy_dz: 0.15 0.15 0.15
+#time_window: 1.6e-7
+
+Check for dispersion, permittivty and conductivity models
+#material: 3.6 1e-10 1 0 moon_base
+
+Origin is from Lower Left
+#waveform: ricker 1 50e6 ricker_wavelet
+#hertzian_dipole: z 20 40 0 ricker_wavelet
+#rx: 30 40 0
+
+#box: 0 0 0 50 40 0.15 moon_base
+#cylinder: 25 30 0 25 30 0.15 1 pec
+
+#geometry_view: 0 0 0 50 50 0.15 0.15 0.15 0.15 moon_basic_model n
