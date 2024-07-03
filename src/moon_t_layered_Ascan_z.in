@@ -4,7 +4,7 @@ Taking Source of 50 MHz with cylinder at depth of 10 m, radius of 1 m.
 
 #domain: 50 50 10
 #dx_dy_dz: 0.09 0.09 0.09
-#time_window: 1.4e-7
+#time_window: 1.6e-7
 
 Check for dispersion, permittivty and conductivity models for lava tubes + subsurface
 Add at least 1 more material for the lava tube, change cylinder coordinates
@@ -20,4 +20,4 @@ Origin is from Lower Left
 #cylinder: 25 30 0 25 30 10 1 pec
 
 Add Snapshots, For BScan - Merge Ouputs
-#geometry_view: 0 0 0 50 50 10 0.09 0.09 0.09 moon_basic_model_z n
+#geometry_view: 0 0 0 50 50 10 0.15 0.15 0.15 moon_basic_model n

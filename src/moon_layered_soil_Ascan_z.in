@@ -1,5 +1,4 @@
-#title: 3D A-scan from a metal cylinder buried in a dielectric half-space
-Try for n and output merged and mpi
+#title: 3D A-scan from a lava tube cylinder present in the moon
 Taking Source of 50 MHz with cylinder at depth of 10 m, radius of 1 m.
 
 #domain: 50 50 10
@@ -10,6 +9,7 @@ Check for dispersion, permittivty and conductivity models for lava tubes + subsu
 Add at least 1 more material for the lava tube, change cylinder coordinates
 Could make a layered model
 #material: 3.6 1e-10 1 0 moon_base
+#material: 0 0 0 0 0 lava_tube
 
 Origin is from Lower Left
 #waveform: ricker 1 50e6 ricker_wavelet
@@ -17,7 +17,7 @@ Origin is from Lower Left
 #rx: 30 40 5
 
 #box: 0 0 0 50 40 10 moon_base
-#cylinder: 25 30 0 25 30 10 1 pec
+#cylinder: 25 30 0 25 30 10 1 lava_tube
 
 Add Snapshots, For BScan - Merge Ouputs
 #geometry_view: 0 0 0 50 50 10 0.09 0.09 0.09 moon_basic_model_z n
