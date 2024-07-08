@@ -8,8 +8,8 @@ Taking Source of 50 MHz with cylinder at depth of 10 m, radius of 1 m.
 
 Check for dispersion, permittivty and conductivity models for lava tubes + subsurface
 Add at least 1 more material for the lava tube, change cylinder coordinates
-Could make a layered model
 #material: 3.6 1e-10 1 0 moon_base
+#material: 
 
 Origin is from Lower Left
 #waveform: ricker 1 50e6 ricker_wavelet
