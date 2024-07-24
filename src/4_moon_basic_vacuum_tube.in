@@ -1,5 +1,5 @@
 #domain: 50.0 30.0 25.0
-#dx_dy_dz: 0.13 0.13 0.13
+#dx_dy_dz: 0.09 0.09 0.09
 #time_window: 3.198333333333333e-07
 #waveform: ricker 1 50e6 ricker_wavelet
 #hertzian_dipole: z 20.0 25.0 12.5 ricker_wavelet
