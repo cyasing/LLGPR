@@ -10,8 +10,10 @@ gprMax Only Scripts - Ascan
 Python Scripts - Ascan
 ----------------------
 
-3. Basic Moon Homogeneous Basalt Medium with Lava-Filled Tube - No Response
-4. Basic Moon Homogeneous Basalt Medium with Lava-Vacuum Tube - Visible Response
+3. a) Basic Moon Homogeneous Basalt Medium with Lava-Filled Tube - No Response (one material)
+3. b) Basic Moon Homogeneous Basalt Medium with Lava-Filled Tube - "No" Response
+4. a) Basic Moon Homogeneous Basalt Medium with Lava-Vacuum Tube - Visible Response (two materials)
+4. b) Basic Moon Homogeneous Basalt Medium with Lava-Vacuum Tube - Visible Response
 5. Moon Heterogeneous Basalt Medium - Regolith and Crust
 6. Moon Heterogeneous Basalt Medium - Regolith and Crust with PEC Cylinder
 7. Moon Heterogeneous Basalt Medium - Regolith and Crust with Lava-Filled Tube - Close to No Response
@@ -28,10 +30,10 @@ Python Scripts to generate gprMax Scripts for Server Testing
 Miscellaneous
 -------------
 12. Python File to Convert Lava Tube Text Files to Readable Point Clouds
+13. Streamline tube reading using files?
 
 Additions
 ---------
 - Try Both CUDA and MPI
 - Add surface roughness and/topography given
-- Streamline tube reading using files?
 - Bscan Scripts - Convert from Ascans
