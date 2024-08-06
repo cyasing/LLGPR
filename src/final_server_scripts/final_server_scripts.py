@@ -72,7 +72,7 @@ print(f"y_gpr: {y_gpr}")
 
 # Editing the Lava Tube Points to Comply with the Domain
 
-data_all = pd.read_csv('../../LavaTubeData/LiDAR_InclineCave_TUBE_TLS_points.txt', sep=' ', header=None)
+data_all = pd.read_csv('LavaTubeData/LiDAR_InclineCave_TUBE_TLS_points.txt', sep=' ', header=None)
 # Convert to numpy arrays X, Y, Z
 data_points = data_all.to_numpy()
 X = (data_points[:, 0])*scale
