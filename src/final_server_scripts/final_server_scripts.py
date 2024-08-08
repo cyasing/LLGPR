@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
+from scipy.spatial import Delaunay
 
-scale = 1
+scale = 0.5
 
 # Domain
 x = 200*scale
@@ -72,7 +73,7 @@ print(f"y_gpr: {y_gpr}")
 
 # Editing the Lava Tube Points to Comply with the Domain
 
-data_all = pd.read_csv('LavaTubeData/LiDAR_InclineCave_TUBE_TLS_points.txt', sep=' ', header=None)
+data_all = pd.read_csv('../LavaTubeData/LiDAR_InclineCave_TUBE_TLS_points.txt', sep=' ', header=None)
 # Convert to numpy arrays X, Y, Z
 data_points = data_all.to_numpy()
 X = (data_points[:, 0])*scale
@@ -139,12 +140,6 @@ print(f"Z_max: {Z_max}")
 data_all_shifted = pd.DataFrame(np.column_stack((X, Y, Z)))
 data_all_shifted = data_all_shifted.to_numpy()
 
-# Save the new points to vtk
-from pyevtk.hl import pointsToVTK
-pointsToVTK("LiDAR_InclineCave_TUBE_adjusted", X, Y, Z)
-
-from scipy.spatial import Delaunay
-
 permittivity_values = 7.6* np.ones_like(X)
 
 
@@ -155,7 +150,6 @@ permittivity_values = 7.6* np.ones_like(X)
 x_val = np.linspace(0, x, int(nx*scale))
 z_val = np.linspace(0, z, int(ny*scale))
 y_val = np.linspace(0, y_moon, int(nz*scale))
-
 
 meshgrid_x, meshgrid_y, meshgrid_z = np.meshgrid(x_val, y_val, z_val, indexing='ij')
 points = np.vstack((meshgrid_x.flatten(), meshgrid_y.flatten(), meshgrid_z.flatten())).T

@@ -17,7 +17,7 @@ Local Runs
 Full Scale Runs
 ---------------
 - Cave Depth: C = 10 m
-- Scale: 1
+- Scale: 0.5
 - Offsets: 0 m, O = 0.25 m
 - Trace Spacing: 0.1 m
 - Height: 0 m, 0.1 m

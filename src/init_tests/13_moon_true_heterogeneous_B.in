@@ -1,0 +1,14 @@
+#domain: 50.0 30.0 25.0
+#dx_dy_dz: 0.09 0.09 0.09
+#time_window: 9e-07
+#waveform: ricker 1 50e6 ricker_wavelet
+#hertzian_dipole: z 5.0 25.0 12.5 ricker_wavelet
+#soil_gen_bruggeman_moon: 13 17.8 2.2 3.2 13.5 15.5 7.5 12.5 40.5 47.5 8.5 12.5 soil_reg
+#fractal_box: 0 23.875 0 50.0 25.0 25.0 2.5 0.75 0.75 1.5 25 soil_reg moon_regolith
+#soil_gen_bruggeman_moon: 19 22 1 6 6 10.5 6 11.5 42 47 9.5 10.5 rocks_crust
+#fractal_box: 0 0 0 50.0 23.875 25.0 2.5 0.75 0.75 1.5 25 rocks_crust moon_crust
+#rx: 5.45 25.0 12.5
+#src_steps: 0.9 0 0
+#rx_steps: 0.9 0 0
+
+#geometry_view: 0 0 0 50.0 30.0 25.0 0.13 0.13 0.13 5_moon_true_heterogeneous n 
