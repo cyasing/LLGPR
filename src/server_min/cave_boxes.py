@@ -8,7 +8,7 @@ scale = 0.5
 
 # Domain
 x = 150*scale
-z = 74*scale
+z = 80*scale
 y_air = 5*scale
 y_moon = 50*scale
 y = y_moon + y_air
@@ -53,7 +53,7 @@ print(f"nx: {nx}, ny: {ny}, nz: {nz}")
 # x_grid, y_grid, z_grid = np.meshgrid(x_vals, y_vals, z_vals, indexing='xy')
 
 # Time Window
-time_window = 2 * y_moon / vel_bg
+time_window = 9e-7
 
 # Print
 print(f"Domain: {x} x {y} x {z}")
@@ -255,3 +255,46 @@ with open(f'boxes_{int(1/scale)}.csv', mode='w', newline='') as file:
         writer.writerow([start[0], start[1], start[2], end[0], end[1], end[2]])
 
 print(f"Boxes have been exported to 'boxes_{int(1/scale)}.csv'")
+
+
+def write_vtk_file(boxes_real, filename='boxes.vtk'):
+    with open(filename, 'w') as vtk_file:
+        # VTK header
+        vtk_file.write("# vtk DataFile Version 3.0\n")
+        vtk_file.write("Box Data\n")
+        vtk_file.write("ASCII\n")
+        vtk_file.write("DATASET UNSTRUCTURED_GRID\n")
+
+        # Calculate the total number of points (8 points per box)
+        num_points = len(boxes_real) * 8
+        vtk_file.write(f"POINTS {num_points} float\n")
+
+        # Write points (vertices of each box)
+        points = []
+        for box in boxes_real:
+            start, end = box
+            x0, y0, z0 = start
+            x1, y1, z1 = end
+            
+            # Define the 8 vertices of the box
+            vertices = [
+                (x0, y0, z0), (x1, y0, z0), (x1, y1, z0), (x0, y1, z0),
+                (x0, y0, z1), (x1, y0, z1), (x1, y1, z1), (x0, y1, z1)
+            ]
+            points.extend(vertices)
+        
+        for point in points:
+            vtk_file.write(f"{point[0]} {point[1]} {point[2]}\n")
+
+        # Define cells (hexahedrons) and their connectivity
+        num_boxes = len(boxes_real)
+        vtk_file.write(f"CELLS {num_boxes} {num_boxes * 9}\n")
+        for i in range(num_boxes):
+            vtk_file.write(f"8 {i*8} {i*8+1} {i*8+2} {i*8+3} {i*8+4} {i*8+5} {i*8+6} {i*8+7}\n")
+
+        # Define cell types (12 = VTK_HEXAHEDRON)
+        vtk_file.write(f"CELL_TYPES {num_boxes}\n")
+        for _ in range(num_boxes):
+            vtk_file.write("12\n")
+
+write_vtk_file(boxes_real, f'boxes_{int(1/scale)}.vtk')
