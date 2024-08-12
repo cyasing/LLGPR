@@ -151,7 +151,7 @@ nz = int(np.ceil((z_max - z_min) / dz))
 point_cloud_o3d = o3d.geometry.PointCloud()
 point_cloud_o3d.points = o3d.utility.Vector3dVector(point_cloud)
 point_cloud_o3d.estimate_normals(search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=0.1, max_nn=30))
-mesh, densities = o3d.geometry.TriangleMesh.create_from_point_cloud_poisson(point_cloud_o3d, depth=9)
+mesh, densities = o3d.geometry.TriangleMesh.create_from_point_cloud_poisson(point_cloud_o3d, depth=10)
 
 # Step 2: Convert mesh to voxel grid using trimesh
 # Convert mesh to numpy array of vertices and faces
