@@ -2,5 +2,6 @@
 *.txt
 *.vti
 *.vtu
+*.out
 
 */final_server_scripts/
