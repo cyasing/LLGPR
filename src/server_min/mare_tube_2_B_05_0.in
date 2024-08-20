@@ -1,6 +1,6 @@
 #domain: 75.0 27.5 37.0
 #dx_dy_dz: 0.09 0.09 0.09
-#time_window: 6e-07
+#time_window: 1e-06
 #waveform: ricker 1 100000000.0 ricker_wavelet
 #hertzian_dipole: z 7.5 25.0 18.5 ricker_wavelet
 #soil_gen_bruggeman_moon: 13 17.8 2.2 3.2 13.5 15.5 7.5 12.5 40.5 47.5 8.5 12.5 100000000.0 soil_reg
